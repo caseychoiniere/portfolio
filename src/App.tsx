@@ -203,20 +203,28 @@ export default function App() {
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="flex flex-col md:flex-row md:items-center gap-8"
+                className="flex flex-col md:flex-row md:items-start gap-4"
             >
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-zinc-800 to-zinc-700 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                <img
-                    src={RESUME_DATA.avatarUrl}
-                    alt={RESUME_DATA.name}
-                    className="relative w-32 rounded-full object-cover border-2 border-zinc-800"
-                    referrerPolicy="no-referrer"
-                />
+              <div className="flex items-center md:items-start gap-4 md:gap-10 md:shrink-0">
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-zinc-800 to-zinc-700 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                  <img
+                      src={RESUME_DATA.avatarUrl}
+                      alt={RESUME_DATA.name}
+                      className="relative w-24 md:w-32 rounded-full object-cover border-2 border-zinc-800"
+                      referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div className="md:hidden">
+                  <h1 className="text-5xl font-bold tracking-tight text-white leading-[0.9]">
+                    <span className="block">Casey</span>
+                    <span className="block">Choiniere</span>
+                  </h1>
+                </div>
               </div>
-              <div className="space-y-2">
-                <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
-                  {RESUME_DATA.name}
+              <div className="flex-1 space-y-4">
+                <h1 className="hidden md:block text-6xl lg:text-6xl font-bold tracking-tighter text-white mb-2">
+                  Casey Choiniere
                 </h1>
                 <p className="text-xl text-zinc-300 font-light max-w-xl">
                   {RESUME_DATA.about}
